@@ -1,0 +1,16 @@
+{
+  "name": "download-video",
+  "version": "1.0.0",
+  "author": "@iaurg",
+  "description": "Download video from m3u8",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "engines": {
+    "node": ">=22.15.0"
+  }
+}
