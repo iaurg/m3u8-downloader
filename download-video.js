@@ -111,7 +111,11 @@ function resolveUrl(baseUrl, relativeUrl) {
 // Function to create FFmpeg input file list
 function createFFmpegInputFile(segmentPaths) {
   const fileContent = segmentPaths
-    .map((filePath) => `file '${filePath.replace(/\\/g, "/")}'`)
+    .map((filePath) => {
+      const normalizedPath =
+        process.platform === "win32" ? filePath.replace(/\\/g, "/") : filePath;
+      return `file '${normalizedPath}'`;
+    })
     .join("\n");
   fs.writeFileSync(SEGMENTS_LIST, fileContent);
 }
